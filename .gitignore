@@ -1,0 +1,36 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Output of go build
+/build/
+bin/
+obj/
+
+# Go workspace file
+go.work
+go.work.sum
+
+# env file
+.env
+
+# Dependency directories (if using vendoring)
+/vendor/
+
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Test logs
+*.log
+
+# Coverage files
+*.cover
+coverage.out
