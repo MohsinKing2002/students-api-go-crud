@@ -19,8 +19,8 @@ go.work.sum
 # env file
 .env
 
-# Dependency directories (if using vendoring)
-/vendor/
+# db files
+storage/
 
 # IDE/editor files
 .idea/
