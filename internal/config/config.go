@@ -9,13 +9,13 @@ import (
 )
 
 type HttpServer struct {
-	Address string
+	Address string `yaml:"address"`
 }
 
 type Config struct {
 	Env string `yaml:"env" env:"ENV" env-required:"true"`
 	StoragePath string `yaml:"storage_path" env-required:"true"`
-	HttpServer `yaml:"http_server" env-default:"localhost:5000"`
+	HttpServer `yaml:"http_server"`
 }
 
 func MustLoad() *Config {
@@ -40,7 +40,7 @@ func MustLoad() *Config {
 
 	var cfg Config
 	//read the configuration and store it to the given struct var.
-	err := cleanenv.ReadConfig(configPath, cfg)
+	err := cleanenv.ReadConfig(configPath, &cfg)
 
 	if err != nil {
 		log.Fatalf("Cannot read config file: %s", err.Error())
