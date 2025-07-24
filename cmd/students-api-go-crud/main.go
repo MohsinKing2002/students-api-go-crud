@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/mohsinking2002/students-api-go-crud/internal/config"
+	"github.com/mohsinking2002/students-api-go-crud/internal/http/student"
 )
 
 func main()  {
@@ -21,9 +22,7 @@ func main()  {
 	
 	// setup router
 	router := http.NewServeMux()
-	router.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Welcome to Student API"))
-	})
+	router.HandleFunc("POST /api/students/new", student.New())
 
 	// setup server
 	server := http.Server{
